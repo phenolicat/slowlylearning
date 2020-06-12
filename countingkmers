@@ -1,0 +1,23 @@
+file = ''
+f = open(file, 'r')
+content = []
+for line in f:
+    line = line.strip()
+    content.append(line)
+Text = content[0]
+Pattern = content[1]
+
+def PatternCount(Text, Pattern):
+    count = 0
+    i = 0
+    while i <= len(Text)-len(Pattern):
+        len_pattern = len(Pattern)
+        end = i + len_pattern
+        if Text[i: end] == Pattern:
+                count += 1
+        i += 1
+    return count
+
+count = PatternCount(Text, Pattern)
+print(count)
+
