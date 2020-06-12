@@ -1,0 +1,5 @@
+file = ''
+
+with open(file) as f:
+    for line in f:
+        print(line.count('A'), line.count('C'), line.count('G'), line.count('T'))
