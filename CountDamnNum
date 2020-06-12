@@ -1,0 +1,22 @@
+low = 0
+high = 100
+ans = int((low+high)/2)
+userinput = ''
+print('Please think of a number between 0 and 100!')
+while userinput != 'c':
+    print('Is your secret number '+str(ans)+'?')
+    print("Enter 'h' to indicate the guess is too high. "
+          "Enter 'l' to indicate the guess is too low. "
+          "Enter 'c' to indicate I guessed correctly. ", end="")
+    userinput = input()
+    if userinput == 'h':
+        high = ans
+        ans = int((low+ans)/2)
+    elif userinput == 'l':
+        low = ans
+        ans = int((high+ans)/2)
+    elif userinput == 'c':
+        print('Game over. Your secret number was: '+str(ans))
+        break
+    else:
+        print('Sorry, I did not understand your input.')
